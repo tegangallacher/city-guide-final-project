@@ -5,6 +5,7 @@ Travelling to new cities is always a fun experience but sometimes you just need 
 MVP.
 
 Creates a day itinerary for three main attractions to visit in the city. 
+
 Morning 	swipe choice of activity/landmark 
 
 Afternoon	swipe choice of activity/landmark   —> calculates walking distance between each.
