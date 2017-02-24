@@ -13,7 +13,12 @@ Create an API - containing the data prototype of places in Edinburgh (4/5 for ea
 :Includes name, description, price(if applicable), type, location, image
 
 
-EXTENSIONS.		                  	TECHNOLOGIES.
-Google Map API			              Ruby on Rails
-Plotting route on map		          React
-User log in 			                Mobile web app
+EXTENSIONS.			
+Google Map API		
+Plotting route on map	
+User log in 	
+
+TECHNOLOGIES.
+Ruby on Rails
+React
+[Mobile web app]
