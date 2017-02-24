@@ -6,7 +6,9 @@ MVP.
 
 Creates a day itinerary for three main attractions to visit in the city. 
 Morning 	swipe choice of activity/landmark 
+
 Afternoon	swipe choice of activity/landmark   —> calculates walking distance between each.
+
 Evening 	swipe choice of activity/landmark
 
 Create an API - containing the data prototype of places in Edinburgh (4/5 for each section)		
