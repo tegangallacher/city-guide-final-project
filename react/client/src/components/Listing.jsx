@@ -1,12 +1,16 @@
 import React from 'react'
+import Attraction from './Attraction'
 
 class Listing extends React.Component {
 
   constructor(props) {
     super(props)
    
+    this.handleClick = this.handleClick.bind(this)
+
     this.state = {  
-      attractions: [] 
+      attractions: [],
+      focusAttraction: 0
     }
   }
 
@@ -21,21 +25,28 @@ class Listing extends React.Component {
     request.onload = () => {
        if(request.status === 200){
         var data = JSON.parse(request.responseText)
-        this.setState( { attractions: data } )
+        this.setState( { attractions: data} )
        } 
     }
     request.send(null)
   }
-  
-  render(){
-   var places = this.state.attractions.map(function(attraction, index){
-    return <div value={index} key={index}>
-    <h1>{attraction.name}</h1>
-    <p>{attraction.description}</p>
-</div>
-   }) 
-   return(<div>{places}</div>) 
+
+handleClick() {
+  if (this.state.focusAttraction === (this.state.attractions.length - 1)) {
+    this.setState({focusAttraction: 0 })
+  } else {
+    this.setState({focusAttraction: this.state.focusAttraction + 1 })
   }
+}  
+
+render() {
+  return(
+    <div>
+      <Attraction attraction={this.state.attractions[this.state.focusAttraction]} handleClick={this.handleClick}/>
+    </div>
+  )
+}
+
 
 }
 
