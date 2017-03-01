@@ -1,10 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Guide = require('./components/Guide.jsx');
+var Home = require('./components/Home.jsx');
 
 window.onload = function(){
   ReactDOM.render(
-   <Guide/>,
+   <Home/>,
     document.getElementById('app')
   );
 }

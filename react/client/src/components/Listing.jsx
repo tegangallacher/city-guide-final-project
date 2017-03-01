@@ -1,16 +1,23 @@
 import React from 'react'
-import Attraction from './Attraction'
+import MorningAttraction from './MorningAttraction'
+import AfternoonAttraction from './AfternoonAttraction'
+import EveningAttraction from './EveningAttraction'
+
 
 class Listing extends React.Component {
 
   constructor(props) {
     super(props)
    
-    this.handleClick = this.handleClick.bind(this)
+    this.handleMorningClick = this.handleMorningClick.bind(this)
+    this.handleAfternoonClick = this.handleAfternoonClick.bind(this)
+    this.handleEveningClick = this.handleEveningClick.bind(this)
 
     this.state = {  
       attractions: [],
-      focusAttraction: 0
+      focusMorningAttraction: 0,
+      focusAfternoonAttraction: 5,
+      focusEveningAttraction: 10
     }
   }
 
@@ -31,18 +38,39 @@ class Listing extends React.Component {
     request.send(null)
   }
 
-handleClick() {
-  if (this.state.focusAttraction === (this.state.attractions.length - 1)) {
-    this.setState({focusAttraction: 0 })
+handleMorningClick() {
+  if (this.state.focusMorningAttraction === 4) {
+    this.setState({focusMorningAttraction: 0 })
   } else {
-    this.setState({focusAttraction: this.state.focusAttraction + 1 })
+    this.setState({focusMorningAttraction: this.state.focusMorningAttraction + 1 })
+  }
+}
+
+handleAfternoonClick() {
+  if (this.state.focusAfternoonAttraction === 9) {
+    this.setState({focusAfternoonAttraction: 5 })
+  } else {
+    this.setState({focusAfternoonAttraction: this.state.focusAfternoonAttraction + 1 })
   }
 }  
 
+handleEveningClick() {
+  if (this.state.focusEveningAttraction === 14) {
+    this.setState({focusEveningAttraction: 10 })
+  } else {
+    this.setState({focusEveningAttraction: this.state.focusEveningAttraction + 1 })
+  }
+}    
+
 render() {
   return(
-    <div>
-      <Attraction attraction={this.state.attractions[this.state.focusAttraction]} handleClick={this.handleClick}/>
+    <div className="spacing">
+    <img src="./images/grey.jpg" className="spacing"></img>
+      <MorningAttraction attraction={this.state.attractions[this.state.focusMorningAttraction]} handleMorningClick={this.handleMorningClick}/>
+     
+      <AfternoonAttraction attraction={this.state.attractions[this.state.focusAfternoonAttraction]} handleAfternoonClick={this.handleAfternoonClick}/>
+ 
+      <EveningAttraction attraction={this.state.attractions[this.state.focusEveningAttraction]} handleEveningClick={this.handleEveningClick}/>
     </div>
   )
 }

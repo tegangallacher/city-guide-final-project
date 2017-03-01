@@ -5,7 +5,6 @@ import Listing from './Listing'
    render() {
      return(
        <div>
-       <h1 className="heading">24 hours in Edinburgh</h1>
        <Listing/>
        </div>
        );

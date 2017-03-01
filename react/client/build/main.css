@@ -1,9 +1,38 @@
 body {
-  background-color: pink;
+  background-image: url('images/background3.jpg');
+  background-size: 1000px 1500px;
+  display: flex;
+  position: relative;
 }
 
 .heading{
   color: steelblue;
   font-family: helvetica;
+  font-size: 50px;
+  text-align: center;
+
+}
+
+.time {
+  color: steelblue;
+  font-family: helvetica;
   font-size: 50px; 
+  text-align: center;
+}
+
+img{
+  width: 800px;
+  height: 450px
+}
+
+.ImageButton {
+  width: 450px;
+  height: 450px;
+  padding-top: 250px;
+  padding-left: 160px;
+}
+
+.spacing {
+  width: 800px;
+  height: 90px;
 }
