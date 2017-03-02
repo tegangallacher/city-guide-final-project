@@ -65,11 +65,9 @@ handleEveningClick() {
 render() {
   return(
     <div className="spacing">
-    <img src="./images/grey.jpg" className="spacing"></img>
+    <img src="./images/pink.jpg" className="spacing"></img>
       <MorningAttraction attraction={this.state.attractions[this.state.focusMorningAttraction]} handleMorningClick={this.handleMorningClick}/>
-     
       <AfternoonAttraction attraction={this.state.attractions[this.state.focusAfternoonAttraction]} handleAfternoonClick={this.handleAfternoonClick}/>
- 
       <EveningAttraction attraction={this.state.attractions[this.state.focusEveningAttraction]} handleEveningClick={this.handleEveningClick}/>
     </div>
   )
